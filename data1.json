@@ -1,0 +1,25 @@
+{
+  "SJML": {
+    "header": {
+      "fileInfo": {
+        "fileId": "WBOR1900000014",
+        "annoLevel": "원시",
+        "sampling": "부분 추출",
+        "class": "책-정보",
+        "subclass": "문학"
+      },
+      "sourceInfo": {
+        "title": "(월간 정여울) 까르륵까르륵",
+        "author": "정여울",
+        "publisher": "천년의상상",
+        "year": 2018
+      }
+    },
+    "text": {
+      "p": [
+        "작가소개",
+        "© 이승원"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "xml-validate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^6.11.0",
+    "fast-xml-parser": "^3.16.0",
+    "xsd2jsonschema": "^0.3.4"
+  }
+}
