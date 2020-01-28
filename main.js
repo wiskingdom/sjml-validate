@@ -15,7 +15,6 @@ try {
   xToJ.parse(xml, {}, true);
 } catch (error) {
   console.log(`01\t${error.message}`);
-
 }
 
 try {

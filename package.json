@@ -1,5 +1,5 @@
 {
-  "name": "xml-validate",
+  "name": "sjml-validate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "ajv": "^6.11.0",
-    "fast-xml-parser": "^3.16.0",
-    "xsd2jsonschema": "^0.3.4"
+    "fast-xml-parser": "^3.16.0"
   }
 }
