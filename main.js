@@ -4,12 +4,12 @@ const { xValidate } = require('./lib/xTools.js');
 
 //options
 // souceType: wr:원문, wm:원문-잡지, wn:뉴스, ww:웹, sd:일상대화, ss:구어
-const sourceType = 'wn';
-const extention = '.xml';
+const sourceType = 'wnn';
+const extention = '.sjml';
 const inputFolder = path
-  .normalize('sample');
+  .normalize('C:\\Users\\korean\\Desktop\\검증기사자료\\corpus');
 const outputFolder = path
-  .normalize('out/sample');
+  .normalize('C:\\Users\\korean\\Desktop\\검증기사자료re\\corpus');
 const parentFolder = path.join(...outputFolder.split(path.sep).slice(0, -1));
 const folderName = inputFolder.split(path.sep).reverse()[0];
 const errLogPath = path.join(parentFolder, `errLog_${folderName}.txt`);

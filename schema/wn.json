@@ -217,7 +217,7 @@
                 "examples": [
                   ""
                 ],
-                "pattern": "^(.+)$"
+                "pattern": "^(.*)$"
               },
               "keyword": {
                 "$id": "#/properties/SJML/properties/text/items/properties/keyword",
