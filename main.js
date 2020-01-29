@@ -1,36 +1,41 @@
 const fs = require('fs');
-const xToJ = require('fast-xml-parser');
-const Ajv = require('ajv');
-const ajv = new Ajv(); 
+const path = require('path');
+const { xValidate } = require('./lib/xTools.js');
 
-const { xEscape, toX } = require('./lib/xTools.js');
+//options
+// souceType: wr:원문, wm:원문-잡지, wn:뉴스, ww:웹, sd:일상대화, ss:구어
+const sourceType = 'wn';
+const extention = '.xml';
+const inputFolder = path
+  .normalize('sample');
+const outputFolder = path
+  .normalize('out/sample');
+const parentFolder = path.join(...outputFolder.split(path.sep).slice(0, -1));
+const folderName = inputFolder.split(path.sep).reverse()[0];
+const errLogPath = path.join(parentFolder, `errLog_${folderName}.txt`);
+const validLogPath = path.join(parentFolder, `validLog_${folderName}.txt`);
+const tokenSizePath = path.join(parentFolder, `tokenSize_${folderName}.txt`);
 
-
-const schema = JSON.parse(fs.readFileSync('schema/wr.json', 'utf8'));
-const validate = ajv.compile(schema);
-const xml = fs.readFileSync('sample/wr/data2.sjml', 'utf8');
-const escapedXml = xEscape(xml);
-
-try {
-  xToJ.parse(xml, {}, true);
-} catch (error) {
-  console.log(`01\t${error.message}`);
+const fileNames = fs.readdirSync(inputFolder).filter(fileName => fileName.endsWith(extention));
+const report = {
+  errLog: [],
+  validLog: [],
+  tokenSize: []
 }
 
-try {
-  var obj = xToJ.parse(escapedXml, {}, true);
-  //const p = obj['SJML']['text'].split(/[\n\r]+/)
-  //.map(str => str.replace(/ +/g, ' ').trim());
-  //obj['SJML']['text'] = { p };
+fileNames.forEach(fileName => {
+  const filePath = path.join(inputFolder, fileName);
+  const xmlPath = path.join(outputFolder, fileName.replace(extention, '.sjml'));
+  const result = xValidate(sourceType)(filePath);
+  fs.writeFileSync(xmlPath, result.xml);
+  report.errLog.push(result.errLog.join('\n'));
+  report.validLog.push(result.validLog.join('\n'));
+  report.tokenSize.push(result.tokenSize);
+});
 
-fs.writeFileSync('data2.json', JSON.stringify(obj, null, 2));
-fs.writeFileSync('data2.sjml', toX('wr')(obj));
-const valid = validate(obj);
-if (!valid) {
-  console.log(validate.errors);
-}
+const serialize = arr => arr.join('\n').replace(/[\n\r]+/g, '\n').trim();
 
-} catch (error) {
-  console.log(`02\t${error.message}`);
-}
-validate();
+fs.writeFileSync(errLogPath, serialize(report.errLog));
+fs.writeFileSync(validLogPath, serialize(report.validLog));
+fs.writeFileSync(tokenSizePath, report.tokenSize.join('\n'));
+

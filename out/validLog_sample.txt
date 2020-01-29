@@ -1,0 +1,6 @@
+NIOR1900000013.xml	.SJML.text[0].byline	should match pattern "^(.+)$"
+NIOR1900000014.xml	.SJML.text[0].summary	should match pattern "^([^
+]+)$"
+NIOR1900000018.xml	.SJML.text[2].summary	should match pattern "^([^
+]+)$"
+NIOR1900000024.xml	.SJML.text[0].byline	should match pattern "^(.+)$"

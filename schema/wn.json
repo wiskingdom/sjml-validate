@@ -1,0 +1,248 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "SJML"
+  ],
+  "properties": {
+    "SJML": {
+      "$id": "#/properties/SJML",
+      "type": "object",
+      "title": "The Sjml Schema",
+      "required": [
+        "header",
+        "text"
+      ],
+      "properties": {
+        "header": {
+          "$id": "#/properties/SJML/properties/header",
+          "type": "object",
+          "title": "The Header Schema",
+          "required": [
+            "fileInfo",
+            "sourceInfo"
+          ],
+          "properties": {
+            "fileInfo": {
+              "$id": "#/properties/SJML/properties/header/properties/fileInfo",
+              "type": "object",
+              "title": "The Fileinfo Schema",
+              "required": [
+                "fileId",
+                "annoLevel",
+                "sampling",
+                "class"
+              ],
+              "properties": {
+                "fileId": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/fileId",
+                  "type": "string",
+                  "title": "The Fileid Schema",
+                  "default": "",
+                  "examples": [
+                    "NIOR1900000013"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "annoLevel": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/annoLevel",
+                  "type": "string",
+                  "title": "The Annolevel Schema",
+                  "default": "",
+                  "examples": [
+                    "원시"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "sampling": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/sampling",
+                  "type": "string",
+                  "title": "The Sampling Schema",
+                  "default": "",
+                  "examples": [
+                    "부분 추출 – 임의 추출"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "class": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/class",
+                  "type": "string",
+                  "title": "The Class Schema",
+                  "default": "",
+                  "examples": [
+                    "전국 종합지"
+                  ],
+                  "pattern": "^(.+)$"
+                }
+              }
+            },
+            "sourceInfo": {
+              "$id": "#/properties/SJML/properties/header/properties/sourceInfo",
+              "type": "object",
+              "title": "The Sourceinfo Schema",
+              "required": [
+                "title",
+                "author",
+                "publisher",
+                "year"
+              ],
+              "properties": {
+                "title": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/title",
+                  "type": "string",
+                  "title": "The Title Schema",
+                  "default": "",
+                  "examples": [
+                    "전자신문 2011년 기사"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "author": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/author",
+                  "type": "string",
+                  "title": "The Author Schema",
+                  "default": "",
+                  "examples": [
+                    "전자신문"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "publisher": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/publisher",
+                  "type": "string",
+                  "title": "The Publisher Schema",
+                  "default": "",
+                  "examples": [
+                    "전자신문"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "year": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/year",
+                  "type": "integer",
+                  "title": "The Year Schema",
+                  "default": 0,
+                  "examples": [
+                    2011
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "$id": "#/properties/SJML/properties/text",
+          "type": "array",
+          "title": "The Text Schema",
+          "items": {
+            "$id": "#/properties/SJML/properties/text/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "@_date",
+              "@_id",
+              "@_topic",
+              "@_topicOr",
+              "p",
+              "byline",
+              "keyword",
+              "summary"
+            ],
+            "properties": {
+              "@_date": {
+                "$id": "#/properties/SJML/properties/text/items/properties/@_date",
+                "type": "string",
+                "title": "The @_date Schema",
+                "default": "",
+                "examples": [
+                  "20110105"
+                ],
+                "pattern": "^(.+)$"
+              },
+              "@_id": {
+                "$id": "#/properties/SJML/properties/text/items/properties/@_id",
+                "type": "string",
+                "title": "The @_id Schema",
+                "default": "",
+                "examples": [
+                  "NIOR1900000013-000001"
+                ],
+                "pattern": "^(.+)$"
+              },
+              "@_topic": {
+                "$id": "#/properties/SJML/properties/text/items/properties/@_topic",
+                "type": "string",
+                "title": "The @_topic Schema",
+                "default": "",
+                "examples": [
+                  "IT/과학"
+                ],
+                "pattern": "^(.+)$"
+              },
+              "@_topicOr": {
+                "$id": "#/properties/SJML/properties/text/items/properties/@_topicOr",
+                "type": "string",
+                "title": "The @_topicor Schema",
+                "default": "",
+                "examples": [
+                  "기타"
+                ],
+                "pattern": "^(.+)$"
+              },
+              "p": {
+                "$id": "#/properties/SJML/properties/text/items/properties/p",
+                "type": "array",
+                "title": "The P Schema",
+                "items": {
+                  "$id": "#/properties/SJML/properties/text/items/properties/p/items",
+                  "type": "string",
+                  "title": "The Items Schema",
+                  "default": "",
+                  "examples": [
+                    "모바일웹 표준화, `모바일 OK`가 선도한다",
+                    "모바일웹이 대중들에게 주목 받게 된 계기는 `애플 아이폰`의 등장이다. 아이폰이 가져온 변화는 가히 문화 혁명의 수준이었다. 이처럼 스마트폰과 각종 태블릿 기기들과 함께 세계는 지금 모바일 전성시대라 할 정도로 모바일 시장의 급성장과 확대의 발판이 마련되었다.",
+                    "마지막으로 최 이사는 “3년 동안 모바일OK 시범사업을 진행하는 과정에서 정부, 즉 문화관광체육부에서 정책적인 지원과 자금 지원에 대해 노력을 해준 것이 큰 도움이었다”고 말하며, “향후에도 새로운 영역을(어느 분야가 되었든지) 만들어 나가는 데에 있어서 정부의 역할이 상당히 중요하다”고 말했다."
+                  ],
+                  "pattern": "^([^\n\r]+)$"
+                }
+              },
+              "byline": {
+                "$id": "#/properties/SJML/properties/text/items/properties/byline",
+                "type": "string",
+                "title": "The Byline Schema",
+                "default": "",
+                "examples": [
+                  ""
+                ],
+                "pattern": "^(.+)$"
+              },
+              "keyword": {
+                "$id": "#/properties/SJML/properties/text/items/properties/keyword",
+                "type": "string",
+                "title": "The Keyword Schema",
+                "default": "",
+                "examples": [
+                  "모바일;모바일웹;표준;사업;모바일OK"
+                ],
+                "pattern": "^(.+)$"
+              },
+              "summary": {
+                "$id": "#/properties/SJML/properties/text/items/properties/summary",
+                "type": "string",
+                "title": "The Summary Schema",
+                "default": "",
+                "examples": [
+                  "해외에서는 이미 2005년부터 W3C MWI(Mobile Web Initiative)를 중심으로 모바일웹 표준화 작업을 시작해왔으며, 국내에서는 지난 2007년부터 모바일웹2.0포럼이 결성되어 모바일OK 표준화 작업을 진행하고, 문화체육관광부와 한국무선인터넷산업연합회의 지원 하에 모바일 생태계 구축을 목표로 ‘모바일OK시범사업’을 추진하였다. \n‘모바일OK’는 모든 모바일 사용자가 단말기 종류에 구애 받지 않고 자유롭게 이용할 수 있는 환경을 구축하는"
+                ],
+                "pattern": "^([^\n\r]+)$"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

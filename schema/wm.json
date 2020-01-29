@@ -1,0 +1,166 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "SJML"
+  ],
+  "properties": {
+    "SJML": {
+      "$id": "#/properties/SJML",
+      "type": "object",
+      "title": "The Sjml Schema",
+      "required": [
+        "header",
+        "text"
+      ],
+      "properties": {
+        "header": {
+          "$id": "#/properties/SJML/properties/header",
+          "type": "object",
+          "title": "The Header Schema",
+          "required": [
+            "fileInfo",
+            "sourceInfo"
+          ],
+          "properties": {
+            "fileInfo": {
+              "$id": "#/properties/SJML/properties/header/properties/fileInfo",
+              "type": "object",
+              "title": "The Fileinfo Schema",
+              "required": [
+                "fileId",
+                "annoLevel",
+                "sampling",
+                "class",
+                "subclass"
+              ],
+              "properties": {
+                "fileId": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/fileId",
+                  "type": "string",
+                  "title": "The Fileid Schema",
+                  "default": "",
+                  "examples": [
+                    "WBOR1900000014"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "annoLevel": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/annoLevel",
+                  "type": "string",
+                  "title": "The Annolevel Schema",
+                  "default": "",
+                  "examples": [
+                    "원시"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "sampling": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/sampling",
+                  "type": "string",
+                  "title": "The Sampling Schema",
+                  "default": "",
+                  "examples": [
+                    "부분 추출"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "class": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/class",
+                  "type": "string",
+                  "title": "The Class Schema",
+                  "default": "",
+                  "examples": [
+                    "책-정보"
+                  ],
+                  "pattern": "^(.+)$"
+                }
+              }
+            },
+            "sourceInfo": {
+              "$id": "#/properties/SJML/properties/header/properties/sourceInfo",
+              "type": "object",
+              "title": "The Sourceinfo Schema",
+              "required": [
+                "title",
+                "author",
+                "publisher",
+                "year"
+              ],
+              "properties": {
+                "title": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/title",
+                  "type": "string",
+                  "title": "The Title Schema",
+                  "default": "",
+                  "examples": [
+                    "(월간 정여울) 까르륵까르륵"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "author": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/author",
+                  "type": "string",
+                  "title": "The Author Schema",
+                  "default": "",
+                  "examples": [
+                    "정여울"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "publisher": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/publisher",
+                  "type": "string",
+                  "title": "The Publisher Schema",
+                  "default": "",
+                  "examples": [
+                    "천년의상상"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "year": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/year",
+                  "type": "integer",
+                  "title": "The Year Schema",
+                  "default": 0,
+                  "examples": [
+                    2018
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "$id": "#/properties/SJML/properties/text",
+          "type": "object",
+          "title": "The Text Schema",
+          "required": [
+            "p"
+          ],
+          "properties": {
+            "p": {
+              "$id": "#/properties/SJML/properties/text/properties/p",
+              "type": "array",
+              "title": "The P Schema",
+              "items": {
+                "$id": "#/properties/SJML/properties/text/properties/p/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "작가소개",
+                  "© 이승원"
+                ],
+                "pattern": "^(.+)$"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
