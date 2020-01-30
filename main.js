@@ -27,7 +27,6 @@ const main = ({ runType, schemaType, inputFolder, extFilter, outputFolder}) => {
       outputFileName,
       outputXml,
     } = xRun({ runType, schemaType, inputFilePath, outputFolder });
-
     const resultFileName = outputFileName || fileName;
     const tokenSizeResult = [resultFileName, tokenSize].join('\t');
     const processResult = [passEncoding, passParse, passValid]
@@ -63,4 +62,3 @@ const outputFolder = path
 
 // main
 main({ runType, schemaType, inputFolder, extFilter, outputFolder });
-
