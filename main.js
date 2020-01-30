@@ -51,7 +51,7 @@ const main = ({ runType, schemaType, inputFolder, extFilter, outputFolder}) => {
 }
 
 // options
-// souceType: WXRW:문어, WCRW:문어-잡지, NXRW:뉴스, ww:웹, sd:일상대화, ss:구어
+// souceType: WXRW:문어, WCRW:문어-잡지, NXRW:뉴스
 const schemaType = 'WXRW';
 const extFilter = '.sjml';
 const runType = 'convert';
