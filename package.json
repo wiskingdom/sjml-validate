@@ -1,16 +1,31 @@
 {
   "name": "sjml-validate",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wiskingdom/sjml-validate.git"
+  },
+  "homepage": "https://github.com/wiskingdom/sjml-validate",
+  "description": "Command line interface for validating .sjml",
+  "main": "lib/xMain.js",
+  "bin": {
+    "sjmlv": "./bin/sjmlv.js"
+  },
+  "preferGlobal": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Yeonwoo Kim",
+  "bugs": {
+    "url": "https://github.com/wiskingdom/sjml-validate/issues",
+    "email": "wiskingdom@gmail.com"
+  },
   "license": "ISC",
   "dependencies": {
     "ajv": "^6.11.0",
+    "chalk": "^3.0.0",
     "chardet": "^0.8.0",
+    "commander": "^4.1.1",
     "fast-xml-parser": "^3.16.0",
     "glob": "^7.1.6",
     "xlsx": "^0.15.5"

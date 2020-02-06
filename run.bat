@@ -1,0 +1,1 @@
+node .\bin\sjmlv.js -c -s WXRW -i sample/WXOR -e sjml -o output
