@@ -56,7 +56,7 @@
                   "examples": [
                     "원시"
                   ],
-                  "pattern": "^(.+)$"
+                  "pattern": "^(원시)$"
                 },
                 "sampling": {
                   "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/sampling",

@@ -3,11 +3,11 @@ const { xMain } = require('./lib/xMain.js');
 
 // options
 // souceType: WXRW:문어, WCRW:문어-잡지, NXRW:뉴스
-const schemaType = 'NXRW';
-const extFilter = 'xml';
+const schemaType = 'EXRW';
+const extFilter = 'sjml';
 const runType = 'convert';
 const inputFolder = path
-  .normalize('sample/NXOR');
+  .normalize('sample/EXRW');
 const outputFolder = path
   .normalize('output');
 
