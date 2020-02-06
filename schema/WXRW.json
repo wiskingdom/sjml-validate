@@ -46,7 +46,7 @@
                   "examples": [
                     "WBOR1900000014"
                   ],
-                  "pattern": "^(.+)$"
+                  "pattern": "^(W[ABZ]RW19\\d{8})$"
                 },
                 "annoLevel": {
                   "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/annoLevel",
@@ -133,12 +133,13 @@
                 },
                 "year": {
                   "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/year",
-                  "type": "integer",
+                  "type": "string",
                   "title": "The Year Schema",
-                  "default": 0,
+                  "default": "",
                   "examples": [
-                    2018
-                  ]
+                    "2011"
+                  ],
+                  "pattern": "^(\\d{4})$"
                 }
               }
             }

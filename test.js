@@ -1,11 +1,14 @@
-const chardet = require('chardet');
-const obj = { a: '12', b: '34'};
+const glob = require('glob');
+const path = require('path');
 
-console.log({ ...obj, a:'85' });
+const inputFolder = path.normalize('sample/WXOR');
+const inputFolderDep = inputFolder.split(path.sep).length;
+const extFilter = 'sjml'
 
-const arr = ['abx'];
-console.log(arr.join('\n'));
+const files = glob.sync(`${inputFolder}/**/*.${extFilter}`);
+const base = path.parse(files[1]).base;
+const middle = path.join(...path.normalize(files[1]).split(path.sep).slice(inputFolderDep, -1));
 
-const encoding = chardet.detectFileSync('sample/enc.sjml', { sampleSize: 256 });
-
-console.log(encoding);
+console.log(files);
+console.log(base);
+console.log(middle);

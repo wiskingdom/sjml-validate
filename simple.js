@@ -1,26 +1,22 @@
 const fs = require('fs');
 const xToJ = require('fast-xml-parser');
-const { xEscape } = require('./lib/xTools.js');
 
-const filePath = 'sample/NIOR1900000013.xml';
+const filePath = 'sample\\NXOR\\NIOR1900000013.xml';
 const xml = fs.readFileSync(filePath, 'utf8');
-const escapedXml = xEscape(xml);
 
-
-try {
-xToJ.parse(xml, {ignoreAttributes : false}, true);
-} catch (error) {
-console.log(`${filePath}\t01\t${error.message}`);
-
-}
+const parseOptions = {
+  attributeNamePrefix : 'att_',
+  ignoreAttributes : false,
+  parseNodeValue : false,
+};
 
 try {
-var obj = xToJ.parse(escapedXml, {ignoreAttributes : false}, true);
+var obj = xToJ.parse(xml, parseOptions, true);
 // for xmls have no p tags
-fs.writeFileSync('sample.json', JSON.stringify(obj, null, 2));
+fs.writeFileSync('output/sample.json', JSON.stringify(obj, null, 2));
 
 
 } catch (error) {
-console.log(`${filePath}\t02\t${error.message}`);
+console.log(`${filePath}\t${error.message}`);
 
 }
