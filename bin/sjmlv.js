@@ -8,8 +8,6 @@ const lf = '\t\t\t      '
 const blf = lf + '  - '
 
 program
-  .option('-c, --convert', `run convert mode
-    ${lf}  (default: run validate mode)`)
   .option('-s, --schema <Type>', `set an schema type
     ${blf}WXRW: 문어-원시
     ${blf}WCRW: 문어(잡지)-원시
@@ -58,9 +56,6 @@ if (!types.includes(program.schema)) {
   process.exit();  
 }
 
-if (!program.convert) {
-  program.convert = false;
-}
 if (!program.output) {
   program.output = './output/';
 }
@@ -68,11 +63,11 @@ if (!program.ext) {
   program.ext = 'sjml';
 }
 
-const { convert, schema, input, ext, output } = program;
+const { schema, input, ext, output } = program;
 
 
 
-const runType = convert ? 'convert' : 'validate' ;
+const runType = 'validate' ;
 const schemaType = schema;
 const inputFolder = path.normalize(input);
 const extFilter = ext;

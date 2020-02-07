@@ -295,7 +295,7 @@
                       "examples": [
                         "P1"
                       ],
-                      "pattern": "^(P\\d+)$"
+                      "pattern": "^(P\\d+.*)$"
                     },
                     "att_n": {
                       "$id": "#/properties/SJML/text/items/properties/u/properties/att_n",
