@@ -7,7 +7,7 @@ const schemaType = 'SXRW';
 const extFilter = 'sjml';
 const runType = 'convert';
 const inputFolder = path
-  .normalize('C:\\Users\\korean\\Desktop\\구어');
+  .normalize('C:\\Users\\korean\\Desktop\\20190207\\구어');
 const outputFolder = path
   .normalize('C:\\Users\\korean\\Desktop\\output');
 

@@ -48,7 +48,7 @@
                   "examples": [
                     "SDRW1900001863"
                   ],
-                  "pattern": "^(SDRW19\\d{8})$"
+                  "pattern": "^(S[AB]RW19\\d{8})$"
                 },
                 "annoLevel": {
                   "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/annoLevel",
@@ -110,8 +110,7 @@
                 "title",
                 "author",
                 "publisher",
-                "date",
-                "topic"
+                "year"
               ],
               "properties": {
                 "title": {
@@ -144,25 +143,15 @@
                   ],
                   "pattern": "^(.+)$"
                 },
-                "date": {
-                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/date",
+                "year": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/year",
                   "type": "string",
-                  "title": "The Date Schema",
+                  "title": "The Year Schema",
                   "default": "",
                   "examples": [
-                    "2019.08.15"
+                    "2014"
                   ],
-                  "pattern": "^(\\d{4}\\.\\d{2}\\.\\d{2})$"
-                },
-                "topic": {
-                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/topic",
-                  "type": "string",
-                  "title": "The Topic Schema",
-                  "default": "",
-                  "examples": [
-                    "스포츠/레저"
-                  ],
-                  "pattern": "^(.+)$"
+                  "pattern": "^(\\d{4})$"
                 }
               }
             },
@@ -185,15 +174,11 @@
                     "title": "The Items Schema",
                     "required": [
                       "#text",
-                      "att_id",
                       "att_sex",
                       "att_age",
                       "att_occupation",
                       "att_bplace",
-                      "att_gplace",
-                      "att_city",
-                      "att_education",
-                      "att_note"
+                      "att_city"
                     ],
                     "properties": {
                       "#text": {
@@ -206,16 +191,6 @@
                         ],
                         "pattern": "^(P\\d+)$"
                       },
-                      "att_id": {
-                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_id",
-                        "type": "string",
-                        "title": "The Att_id Schema",
-                        "default": "",
-                        "examples": [
-                          "3725"
-                        ],
-                        "pattern": "^(\\d+)$"
-                      },
                       "att_sex": {
                         "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_sex",
                         "type": "string",
@@ -224,7 +199,7 @@
                         "examples": [
                           "남"
                         ],
-                        "pattern": "^([남여])$"
+                        "pattern": "^([MF\\?])$"
                       },
                       "att_age": {
                         "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_age",
@@ -256,16 +231,6 @@
                         ],
                         "pattern": "^(.+)$"
                       },
-                      "att_gplace": {
-                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_gplace",
-                        "type": "string",
-                        "title": "The Att_gplace Schema",
-                        "default": "",
-                        "examples": [
-                          "충남"
-                        ],
-                        "pattern": "^(.+)$"
-                      },
                       "att_city": {
                         "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_city",
                         "type": "string",
@@ -275,60 +240,19 @@
                           "대전"
                         ],
                         "pattern": "^(.+)$"
-                      },
-                      "att_education": {
-                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_education",
-                        "type": "string",
-                        "title": "The Att_education Schema",
-                        "default": "",
-                        "examples": [
-                          "대졸"
-                        ],
-                        "pattern": "^(.+)$"
-                      },
-                      "att_note": {
-                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_note",
-                        "type": "string",
-                        "title": "The Att_note Schema",
-                        "default": "",
-                        "examples": [
-                          ""
-                        ],
-                        "pattern": "^(.*)$"
                       }
                     }
                   }
                 },
                 "setting": {
                   "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting",
-                  "type": "object",
+                  "type": "string",
                   "title": "The Setting Schema",
-                  "required": [
-                    "relation",
-                    "situation"
+                  "default": "",
+                  "examples": [
+                    "세팅"
                   ],
-                  "properties": {
-                    "relation": {
-                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/relation",
-                      "type": "string",
-                      "title": "The Relation Schema",
-                      "default": "",
-                      "examples": [
-                        "부부"
-                      ],
-                      "pattern": "^(.+)$"
-                    },
-                    "situation": {
-                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/situation",
-                      "type": "string",
-                      "title": "The Situation Schema",
-                      "default": "",
-                      "examples": [
-                        ""
-                      ],
-                      "pattern": "^(.*)$"
-                    }
-                  }
+                  "pattern": "^(.+)$"
                 }
               }
             }
@@ -343,9 +267,15 @@
               "$id": "#/properties/SJML/text/items",
               "type": "object",
               "title": "The Items Schema",
-              "required": [
-                "u"
+              "oneOf": [
+                {
+                  "required": ["u"]
+                },
+                {
+                  "required": ["note"]
+                }
               ],
+              
               "properties": {
                 "u": {
                   "$id": "#/properties/SJML/text/items/properties/u",
