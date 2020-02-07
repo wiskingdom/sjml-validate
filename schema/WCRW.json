@@ -77,6 +77,16 @@
                     "책-정보"
                   ],
                   "pattern": "^(.+)$"
+                },
+                "subclass": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/subclass",
+                  "type": "string",
+                  "title": "The Subclass Schema",
+                  "default": "",
+                  "examples": [
+                    "문학"
+                  ],
+                  "pattern": "^(.*)$"
                 }
               }
             },
@@ -147,6 +157,7 @@
               "$id": "#/properties/SJML/properties/text/properties/p",
               "type": "array",
               "title": "The P Schema",
+              "minItems": 2,
               "items": {
                 "$id": "#/properties/SJML/properties/text/properties/p/items",
                 "type": "string",

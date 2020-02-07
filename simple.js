@@ -2,8 +2,9 @@ const fs = require('fs');
 const xToJ = require('fast-xml-parser');
 const { xEscape } = require('./lib/xTools');
 
-const filePath = 'sample\\SDRW\\SDRW1900001863.xml';
+const filePath = 'C:\\Users\\korean\\Desktop\\ex\\WBOR1900004665.sjml';
 const xml = fs.readFileSync(filePath, 'utf8');
+/*
 const xmlparts = xml.split(/<\/?text>/);
 const headerxml = [xmlparts[0], xmlparts[2]].join('\n');
 const textObj = xmlparts[1].trim().split(/[\n\r]+/)
@@ -20,7 +21,7 @@ const textObj = xmlparts[1].trim().split(/[\n\r]+/)
       return { misc: ''};
     }
   });
-
+*/
 const escXml =  xEscape({ 
   schemaType: 'EXRW',
   inputXml: xml,
@@ -34,10 +35,10 @@ const parseOptions = {
 };
 
 try {
-var obj = xToJ.parse(headerxml, parseOptions, true);
-obj.text = textObj;
+var obj = xToJ.parse(escXml, parseOptions, true);
+// obj.text = textObj;
 // for xmls have no p tags
-fs.writeFileSync('output/sample.json', JSON.stringify(obj, null, 2));
+fs.writeFileSync('C:\\Users\\korean\\Desktop\\ex\\sample.json', JSON.stringify(obj, null, 2));
 
 
 } catch (error) {
