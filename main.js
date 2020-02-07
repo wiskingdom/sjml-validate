@@ -3,13 +3,13 @@ const { xMain } = require('./lib/xMain.js');
 
 // options
 // souceType: WXRW:문어, WCRW:문어-잡지, NXRW:뉴스
-const schemaType = 'SXRW';
+const schemaType = 'WXRW';
 const extFilter = 'sjml';
 const runType = 'convert';
 const inputFolder = path
-  .normalize('C:\\Users\\korean\\Desktop\\20190207\\구어');
+  .normalize('C:\\Users\\yeon\\Desktop\\sample\\WXOR');
 const outputFolder = path
-  .normalize('C:\\Users\\korean\\Desktop\\output');
+  .normalize('C:\\Users\\yeon\\Desktop\\output');
 
 // main
 xMain({ runType, schemaType, inputFolder, extFilter, outputFolder });
