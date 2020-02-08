@@ -5,11 +5,11 @@ const { xMain } = require('./lib/xMain.js');
 // souceType: WXRW:문어, WCRW:문어-잡지, NXRW:뉴스
 const schemaType = 'SDRW';
 const extFilter = 'SJML';
-const runType = 'convert';
+const runType = 'validate';
 const inputFolder = path
-  .normalize('C:\\Users\\yeon\\Desktop\\sample\\SDRW');
+  .normalize('C:\\Users\\wiski\\Desktop\\sample\\SDRW');
 const outputFolder = path
-  .normalize('C:\\Users\\yeon\\Desktop\\output');
+  .normalize('C:\\Users\\wiski\\Desktop\\output');
 
 // main
 xMain({ runType, schemaType, inputFolder, extFilter, outputFolder });
