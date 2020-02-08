@@ -259,76 +259,128 @@
           }
         },
         "text": {
-          "$id": "#/properties/SJML/text",
-          "type": "array",
+          "$id": "#/properties/SJML/properties/text",
+          "type": "object",
           "title": "The Text Schema",
-          "items": [
-            {
-              "$id": "#/properties/SJML/text/items",
-              "type": "object",
-              "title": "The Items Schema",
-              "oneOf": [
-                {
-                  "required": ["u"]
-                },
-                {
-                  "required": ["note"]
-                }
-              ],
-              
-              "properties": {
-                "u": {
-                  "$id": "#/properties/SJML/text/items/properties/u",
-                  "type": "object",
-                  "title": "The U Schema",
-                  "required": [
-                    "att_who",
-                    "att_n",
-                    "str"
-                  ],
-                  "properties": {
-                    "att_who": {
-                      "$id": "#/properties/SJML/text/items/properties/u/properties/att_who",
-                      "type": "string",
-                      "title": "The Att_who Schema",
-                      "default": "",
-                      "examples": [
-                        "P1"
-                      ],
-                      "pattern": "^(P\\d+.*)$"
-                    },
-                    "att_n": {
-                      "$id": "#/properties/SJML/text/items/properties/u/properties/att_n",
-                      "type": "string",
-                      "title": "The Att_n Schema",
-                      "default": "",
-                      "examples": [
-                        "1"
-                      ],
-                      "pattern": "^(\\d+)$"
-                    },
-                    "str": {
-                      "$id": "#/properties/SJML/text/items/properties/u/properties/str",
-                      "type": "string",
-                      "title": "The Str Schema",
-                      "default": "",
-                      "examples": [
-                        "여보 그 <trunc>이 </trunc> 이천이년도 때"
-                      ],
-                      "pattern": "^(.+)$"
-                    }
+          "required": [
+            "u"
+          ],
+          "properties": {
+            "u": {
+              "$id": "#/properties/SJML/properties/text/properties/u",
+              "type": "array",
+              "title": "The U Schema",
+              "items": {
+                "$id": "#/properties/SJML/properties/text/properties/u/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "tag",
+                  "att_who",
+                  "att_n",
+                  "cdata",
+                  "serialNum"
+                ],
+                "properties": {
+                  "tag": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/tag",
+                    "type": "string",
+                    "title": "The Tag Schema",
+                    "default": "",
+                    "examples": [
+                      "u"
+                    ],
+                    "pattern": "^(u)$"
+                  },
+                  "att_who": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/att_who",
+                    "type": "string",
+                    "title": "The Att_who Schema",
+                    "default": "",
+                    "examples": [
+                      "P1"
+                    ],
+                    "pattern": "^(.+)$"
+                  },
+                  "att_n": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/att_n",
+                    "type": "string",
+                    "title": "The Att_n Schema",
+                    "default": "",
+                    "examples": [
+                      "1"
+                    ],
+                    "pattern": "^(\\d+)$"
+                  },
+                  "cdata": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/cdata",
+                    "type": "string",
+                    "title": "The Cdata Schema",
+                    "default": "",
+                    "examples": [
+                      "나도 제주도는 몇 번 가 봤는데 국내 여행으로"
+                    ],
+                    "pattern": "^(.+)$"
+                  },
+                  "serialNum": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/serialNum",
+                    "type": "integer",
+                    "title": "The Serialnum Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
                   }
-                },
-                "note": {
-                  "$id": "#/properties/SJML/text/items/properties/note",
-                  "type": "string",
-                  "title": "The Note Schema",
-                  "default": "",
-                  "pattern": "^(.+)$"
+                }
+              }
+            },
+            "note": {
+              "$id": "#/properties/SJML/properties/text/properties/note",
+              "type": "array",
+              "title": "The Note Schema",
+              "items": {
+                "$id": "#/properties/SJML/properties/text/properties/note/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "tag",
+                  "cdata",
+                  "serialNum"
+                ],
+                "properties": {
+                  "tag": {
+                    "$id": "#/properties/SJML/properties/text/properties/note/items/properties/tag",
+                    "type": "string",
+                    "title": "The Tag Schema",
+                    "default": "",
+                    "examples": [
+                      "note"
+                    ],
+                    "pattern": "^(note)$"
+                  },
+                  "cdata": {
+                    "$id": "#/properties/SJML/properties/text/properties/note/items/properties/cdata",
+                    "type": "string",
+                    "title": "The Cdata Schema",
+                    "default": "",
+                    "examples": [
+                      "노트입니다."
+                    ],
+                    "pattern": "^(.+)$"
+                  },
+                  "serialNum": {
+                    "$id": "#/properties/SJML/properties/text/properties/note/items/properties/serialNum",
+                    "type": "integer",
+                    "title": "The Serialnum Schema",
+                    "default": 0,
+                    "examples": [
+                      1
+                    ]
+                  }
                 }
               }
             }
-          ]
+          }
         }
       }
     }
