@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SJML>
+  <header>
+    <fileInfo>
+      <fileId>EBRW19W00000208</fileId>
+      <annoLevel>원시</annoLevel>
+      <sampling>게시자 모집 후 무작위 추출</sampling>
+      <class>블로그</class>
+    </fileInfo>
+    <sourceInfo>
+      <title>8월국내여행지를 소개합니다! 삼척 나이트비치런 해변파티</title>
+      <author>Dohee</author>
+      <publisher> 네이버 블로그</publisher>
+      <date>2019-07-22 23:15:04</date>
+      <dateCrawl>2019-08-01 12:22:23</dateCrawl>
+      <url>http://blog.naver.com/PostView.nhn?blogId=nobokim&logNo=221592629017</url>
+      <view>0</view>
+    </sourceInfo>
+    <profileInfo>
+      <personId sex="F" age="34"></personId>
+    </profileInfo>
+  </header>
+  <text>
+    <p>삼척 정말 오랜만이다</p>
+    <p>언제였더라.. 3년 전에 마지막 가보고</p>
+    <p>이후로는 방문하지 못했던</p>
+  </text>
+</SJML>

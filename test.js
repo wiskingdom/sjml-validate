@@ -1,10 +1,13 @@
+const fs = require('fs');
+const xToJ = require('fast-xml-parser');
 
-const a = 'abc'
-let m;
-if (m = a.match(/c(.)/)) {
-  console.log(m[1]);
-} else if (m = a.match(/a(.)/)) {
-  console.log(m[1]);
-}
+const parseOptions = {
+  attributeNamePrefix : 'att_',
+  ignoreAttributes : false,
+  parseNodeValue : false,
+  trimValues: false,
+};
+const inputXml = fs.readFileSync('att.xml', 'utf8');
+const obj = xToJ.parse(inputXml, parseOptions, true);
 
-console.log(true && (m = a.match(/c(.)/)))
+fs.writeFileSync('sample.json', JSON.stringify(obj, null, 2));
