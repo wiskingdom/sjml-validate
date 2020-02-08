@@ -1,13 +1,16 @@
-const fs = require('fs');
-const xToJ = require('fast-xml-parser');
 
-const parseOptions = {
-  attributeNamePrefix : 'att_',
-  ignoreAttributes : false,
-  parseNodeValue : false,
-  trimValues: false,
+const plusIndex = str => {
+  const re = /(\[\d+\])/;
+  const strParts = str.split(re);
+  return strParts.map(elem => {
+    if (elem.match(re)) {
+      const plusN = Number.parseInt(elem.slice(1, -1)) + 1;
+      return `[${plusN}]`
+    }
+    return elem;
+  }).join('');
 };
-const inputXml = fs.readFileSync('att.xml', 'utf8');
-const obj = xToJ.parse(inputXml, parseOptions, true);
+const str = '.SJML.text.note[1002].cdata[3]';
 
-fs.writeFileSync('sample.json', JSON.stringify(obj, null, 2));
+console.log(str)
+console.log(plusIndex(str))
