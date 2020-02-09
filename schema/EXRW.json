@@ -229,7 +229,25 @@
                 "examples": [
                   "안녕하세요! 쳐비왔어요&gt;.&lt;"
                 ],
-                "pattern": "^(.+)$"
+                "allOf":[
+                  { "pattern": "^(.+)$" },
+                  {
+                    "not": { "pattern": "^(\\s)" },
+                    "errorMessage": "should NOT match pattern \"^(\\s)\""
+                  },
+                  {
+                    "not": { "pattern": "(\\s)$" },
+                    "errorMessage": "should NOT match pattern \"(\\s)$\""
+                  },
+                  {
+                    "not": { "pattern": "(\\s\\s+)" },
+                    "errorMessage": "should NOT match pattern \"(\\s\\s+)\""
+                  },
+                  {
+                    "not": { "pattern": "(\t)" },
+                    "errorMessage": "should NOT match pattern \"(\t)\""
+                  }
+                ]
               }
             }
           }

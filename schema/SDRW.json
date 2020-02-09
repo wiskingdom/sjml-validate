@@ -414,9 +414,7 @@
                         "not": { "pattern": "(\t)" },
                         "errorMessage": "should NOT match pattern \"(\t)\""
                       }
-                    ]
-                    
-                    
+                    ]                    
                   },
                   "serialNum": {
                     "$id": "#/properties/SJML/properties/text/properties/u/items/properties/serialNum",
