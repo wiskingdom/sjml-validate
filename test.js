@@ -1,16 +1,10 @@
+const xToJ = require('fast-xml-parser');
 
-const plusIndex = str => {
-  const re = /(\[\d+\])/;
-  const strParts = str.split(re);
-  return strParts.map(elem => {
-    if (elem.match(re)) {
-      const plusN = Number.parseInt(elem.slice(1, -1)) + 1;
-      return `[${plusN}]`
-    }
-    return elem;
-  }).join('');
-};
-const str = '.SJML.text.note[1002].cdata[3]';
+const xml = '<u>hi <t>k&im</u>'
 
-console.log(str)
-console.log(plusIndex(str))
+const validness = xToJ.validate(xml);
+
+const obj = xToJ.parse(xml)
+
+console.log(validness)
+

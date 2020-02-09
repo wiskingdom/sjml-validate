@@ -229,7 +229,11 @@
                 "examples": [
                   "모바일;모바일웹;표준;사업;모바일OK"
                 ],
-                "pattern": "^(.+)$"
+                "allOf":[
+                  {"pattern": "^(.+)$"},
+                  {"pattern": "^([^\\s])"},
+                  {"pattern": "([^\\s])$"}
+                ]
               },
               "summary": {
                 "$id": "#/properties/SJML/properties/text/items/properties/summary",

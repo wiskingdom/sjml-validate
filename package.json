@@ -23,11 +23,13 @@
   "license": "ISC",
   "dependencies": {
     "ajv": "^6.11.0",
+    "ajv-errors": "^1.0.1",
     "chalk": "^3.0.0",
     "chardet": "^0.8.0",
     "commander": "^4.1.1",
     "fast-xml-parser": "^3.16.0",
     "glob": "^7.1.6",
+    "he": "^1.2.0",
     "xlsx": "^0.15.5"
   }
 }

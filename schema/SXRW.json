@@ -320,7 +320,11 @@
                     "examples": [
                       "나도 제주도는 몇 번 가 봤는데 국내 여행으로"
                     ],
-                    "pattern": "^(.+)$"
+                    "allOf":[
+                      {"pattern": "^([^\t]+)$"},
+                      {"pattern": "^([^\\s])"},
+                      {"pattern": "([^\\s])$"}
+                    ]
                   },
                   "serialNum": {
                     "$id": "#/properties/SJML/properties/text/properties/u/items/properties/serialNum",
@@ -366,7 +370,11 @@
                     "examples": [
                       "노트입니다."
                     ],
-                    "pattern": "^(.+)$"
+                    "allOf":[
+                      {"pattern": "^([^\t]+)$"},
+                      {"pattern": "^([^\\s])"},
+                      {"pattern": "([^\\s])$"}
+                    ]
                   },
                   "serialNum": {
                     "$id": "#/properties/SJML/properties/text/properties/note/items/properties/serialNum",
