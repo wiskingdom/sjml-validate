@@ -6,10 +6,11 @@ const { xMain } = require('./lib/xMain.js');
 const schemaType = 'SDRW';
 const extFilter = 'SJML';
 const runType = 'validate';
+const logAll = true // 
 const inputFolder = path
   .normalize('C:\\Users\\yeon\\Desktop\\sample\\SDRW');
 const outputFolder = path
   .normalize('C:\\Users\\yeon\\Desktop\\output');
 
 // main
-xMain({ runType, schemaType, inputFolder, extFilter, outputFolder });
+xMain({ runType, schemaType, logAll, inputFolder, extFilter, outputFolder });
