@@ -1,10 +1,9 @@
-const xToJ = require('fast-xml-parser');
+const text = '저는 애니<anon type="name" n="2"/>션<truc>을</trunc> 좋아했<hi/>어요.';
 
-const xml = '<u>hi <t>k&im</u>'
+const matchs = text.match(/<(.+?)[ \/>]/g);
+const tags = matchs ? matchs.map(m => m.split(/[<>\/ ]+/).join('')) : [];
 
-const validness = xToJ.validate(xml);
+//const invalid = matchs ? matchs.find()
 
-const obj = xToJ.parse(xml)
-
-console.log(validness)
+console.log(!!['h'].find(elem => !['hi'].includes(elem)));
 
