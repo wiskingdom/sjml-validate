@@ -7,9 +7,9 @@ const schemaType = 'SDRW';
 const extFilter = 'SJML';
 const runType = 'validate';
 const inputFolder = path
-  .normalize('C:\\Users\\wiski\\Desktop\\sample\\SDRW');
+  .normalize('C:\\Users\\yeon\\Desktop\\sample\\SDRW');
 const outputFolder = path
-  .normalize('C:\\Users\\wiski\\Desktop\\output');
+  .normalize('C:\\Users\\yeon\\Desktop\\output');
 
 // main
 xMain({ runType, schemaType, inputFolder, extFilter, outputFolder });
