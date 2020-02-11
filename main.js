@@ -3,9 +3,9 @@ const { xsMain } = require('./lib/xsMain.js');
 
 // options
 // souceType: WXRW:문어, WCRW:문어-잡지, NXRW:뉴스
-const schemaType = 'WXRW';
+const schemaType = 'SDRW';
 const extFilter = 'SJML';
-const runType = 'validateEsc';
+const runType = 'validate';
 const inputFolder = path
   .normalize('C:\\Users\\yeon\\Desktop\\sample\\SDRW');
 const outputFolder = path
