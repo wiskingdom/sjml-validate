@@ -6,18 +6,18 @@ const program = require('commander');
 const chalk = require('chalk');
 const { xsMain } = require('../lib/xsMain.js');
 
-const lf = '\t\t\t      '
+const lf = ' '.repeat(20)
 const blf = lf + '  - '
 
 program
-  .option('-s, --schema <Type>', `set an schema type
+  .option('-s, --schema <Type>', `set a schema type (required)
     ${blf}WXRW: 문어
     ${blf}WCRW: 문어(잡지)
     ${blf}NXRW: 신문`)
-  .option('-i, --input <dir_path>', 'set a dir path has input files (required)')
-  .option('-e, --ext [ext_name]', `set a extention name of target input files
+  .option('-i, --input <dir_path>', 'set an input dir path (required)')
+  .option('-e, --ext [ext_name]', `set an extention name of target input files
     ${lf}  (default: sjml)`)
-  .option('-o, --output [dir_path]', `set a dir path for results and report
+  .option('-o, --output [dir_path]', `set an output dir path
     ${lf}  (default: ./output/)`)
   .parse(process.argv);
 

@@ -6,11 +6,11 @@ const program = require('commander');
 const chalk = require('chalk');
 const { xsMain } = require('../lib/xsMain.js');
 
-const lf = '\t\t\t      '
+const lf = ' '.repeat(20)
 const blf = lf + '  - '
 
 program
-  .option('-s, --schema <Type>', `set an schema type
+  .option('-s, --schema <Type>', `set a schema type (required)
     ${blf}WXRW: 문어
     ${blf}WCRW: 문어(잡지)
     ${blf}NXRW: 신문
@@ -18,14 +18,15 @@ program
     ${blf}SXRW: 구어(공적독백, 공적대화)
     ${blf}SDRW: 구어(일상대화)
     ${blf}SERW: 준구어(대본)
-    ${blf}SFRW: 준구어(연설)`)
-  .option('-i, --input <dir_path>', 'set a dir path has input files (required)')
-  .option('-e, --ext [ext_name]', `set a extention name of target input files
+    ${blf}SFRW: 준구어(연설)
+    ${blf}MDRW: 메신저대화`)
+  .option('-i, --input <dir_path>', 'set an input dir (required)')
+  .option('-e, --ext [ext_name]', `set an extention name of target input files
     ${lf}  (default: sjml)`)
-  .option('-o, --output [dir_path]', `set a dir path for validation reports
+  .option('-o, --output [dir_path]', `set an output dir
     ${lf}  (default: ./output/)`)
   .option('-w, --withEsc', `run parser with escaping
-    ${lf}  (default: without escaping`)
+    ${lf}  (default: without escaping)`)
   .parse(process.argv);
 
 const types = [
