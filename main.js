@@ -1,5 +1,5 @@
 const path = require('path');
-const { xMain } = require('./lib/xMain.js');
+const { xsMain } = require('./lib/xsMain.js');
 
 // options
 // souceType: WXRW:문어, WCRW:문어-잡지, NXRW:뉴스
@@ -13,4 +13,4 @@ const outputFolder = path
   .normalize('C:\\Users\\yeon\\Desktop\\output');
 
 // main
-xMain({ runType, schemaType, logAll, inputFolder, extFilter, outputFolder });
+xsMain({ runType, schemaType, logAll, inputFolder, extFilter, outputFolder });
