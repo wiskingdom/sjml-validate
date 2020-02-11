@@ -1,1 +1,2 @@
-node .\bin\sjmlv.js -c -s WXRW -i sample/WXOR -e sjml -o output
+node .\bin\sjmlv.js -s SDRW -i C:\Users\yeon\Desktop\sample\SDRW -e SJML -w
+pause

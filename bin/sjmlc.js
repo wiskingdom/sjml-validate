@@ -11,30 +11,18 @@ program
   .option('-s, --schema <Type>', `set an schema type
     ${blf}WXRW: 문어
     ${blf}WCRW: 문어(잡지)
-    ${blf}NXRW: 신문
-    ${blf}EXRW: 웹
-    ${blf}SXRW: 구어(공적독백, 공적대화)
-    ${blf}SDRW: 구어(일상대화)
-    ${blf}SERW: 준구어(대본)
-    ${blf}SFRW: 준구어(연설)`)
+    ${blf}NXRW: 신문`)
   .option('-i, --input <dir_path>', 'set a dir path has input files (required)')
   .option('-e, --ext [ext_name]', `set a extention name of target input files
     ${lf}  (default: sjml)`)
-  .option('-o, --output [dir_path]', `set a dir path for validation reports
+  .option('-o, --output [dir_path]', `set a dir path for results and report
     ${lf}  (default: ./output/)`)
-  .option('-w, --withEsc', `run parser with escaping
-    ${lf}  (default: without escaping`)
   .parse(process.argv);
 
 const types = [
   'WXRW',
   'WCRW',
   'NXRW',
-  'SXRW',
-  'SDRW',
-  'SERW',
-  'SFRW',
-  'EXRW',
 ];
 
 if (!program.input) {
@@ -64,13 +52,12 @@ if (!program.output) {
 if (!program.ext) {
   program.ext = 'sjml';
 }
-if (!program.ext) {
-  program.withEsc = false;
-}
 
-const { schema, input, ext, output, withEsc } = program;
+const { schema, input, ext, output } = program;
 
-const runType = withEsc ? 'validateEsc' : 'validate';
+
+
+const runType = 'convert' ;
 const schemaType = schema;
 const inputFolder = path.normalize(input);
 const extFilter = ext;
@@ -90,15 +77,3 @@ try {
   console.error(chalk.yellowBright('ERROR: Check options'));
   console.log(chalk.yellowBright('usage info can be viewed via: sjmlv --help'));
 }
-
-
-
-/*
-console.log({
-  runType,
-  schemaType,
-  inputFolder,
-  extFilter,
-  outputFolder
-});
-*/
