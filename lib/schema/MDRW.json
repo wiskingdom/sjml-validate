@@ -1,0 +1,425 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "SJML"
+  ],
+  "properties": {
+    "SJML": {
+      "$id": "#/properties/SJML",
+      "type": "object",
+      "title": "The Sjml Schema",
+      "required": [
+        "header",
+        "text"
+      ],
+      "properties": {
+        "header": {
+          "$id": "#/properties/SJML/properties/header",
+          "type": "object",
+          "title": "The Header Schema",
+          "required": [
+            "fileInfo",
+            "sourceInfo",
+            "profileInfo"
+          ],
+          "properties": {
+            "fileInfo": {
+              "$id": "#/properties/SJML/properties/header/properties/fileInfo",
+              "type": "object",
+              "title": "The Fileinfo Schema",
+              "required": [
+                "fileId",
+                "annoLevel",
+                "class"
+              ],
+              "properties": {
+                "fileId": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/fileId",
+                  "type": "string",
+                  "title": "The Fileid Schema",
+                  "default": "",
+                  "examples": [
+                    "MDRW1900001863"
+                  ],
+                  "pattern": "^(SDRW19\\d{8})$"
+                },
+                "annoLevel": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/annoLevel",
+                  "type": "string",
+                  "title": "The Annolevel Schema",
+                  "default": "",
+                  "examples": [
+                    "원시"
+                  ],
+                  "pattern": "^(원시)$"
+                },
+                "class": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/class",
+                  "type": "string",
+                  "title": "The Class Schema",
+                  "default": "",
+                  "examples": [
+                    "사적대화"
+                  ],
+                  "pattern": "^(.+)$"
+                }
+              }
+            },
+            "sourceInfo": {
+              "$id": "#/properties/SJML/properties/header/properties/sourceInfo",
+              "type": "object",
+              "title": "The Sourceinfo Schema",
+              "required": [
+                "title",
+                "author",
+                "publisher",
+                "msg",
+                "topic"
+              ],
+              "properties": {
+                "title": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/title",
+                  "type": "string",
+                  "title": "The Title Schema",
+                  "default": "",
+                  "examples": [
+                    "2인 일상대화 00001863"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "author": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/author",
+                  "type": "string",
+                  "title": "The Author Schema",
+                  "default": "",
+                  "examples": [
+                    "개인발화자"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "publisher": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/publisher",
+                  "type": "string",
+                  "title": "The Publisher Schema",
+                  "default": "",
+                  "examples": [
+                    "메신저 대화 수집"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "msg": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/msg",
+                  "type": "string",
+                  "title": "The msg Schema",
+                  "default": "",
+                  "examples": [
+                    "카카오톡"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "topic": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/topic",
+                  "type": "string",
+                  "title": "The Topic Schema",
+                  "default": "",
+                  "examples": [
+                    "스포츠/레저"
+                  ],
+                  "pattern": "^(.+)$"
+                }
+              }
+            },
+            "profileInfo": {
+              "$id": "#/properties/SJML/properties/header/properties/profileInfo",
+              "type": "object",
+              "title": "The Profileinfo Schema",
+              "required": [
+                "personId",
+                "setting"
+              ],
+              "properties": {
+                "personId": {
+                  "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId",
+                  "type": "array",
+                  "title": "The Personid Schema",
+                  "items": {
+                    "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items",
+                    "type": "object",
+                    "title": "The Items Schema",
+                    "required": [
+                      "#text",
+                      "att_sex",
+                      "att_age",
+                      "att_occupation",
+                      "att_bplace",
+                      "att_gplace",
+                      "att_city",
+                      "att_device",
+                      "att_key"
+                    ],
+                    "properties": {
+                      "#text": {
+                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/#text",
+                        "type": "string",
+                        "title": "The #text Schema",
+                        "default": "",
+                        "examples": [
+                          "P1"
+                        ],
+                        "pattern": "^(P\\d+)$"
+                      },
+                      "att_sex": {
+                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_sex",
+                        "type": "string",
+                        "title": "The Att_sex Schema",
+                        "default": "",
+                        "examples": [
+                          "남"
+                        ],
+                        "pattern": "^([FM])$"
+                      },
+                      "att_age": {
+                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_age",
+                        "type": "string",
+                        "title": "The Att_age Schema",
+                        "default": "",
+                        "examples": [
+                          "30~39세"
+                        ],
+                        "pattern": "^(.+)$"
+                      },
+                      "att_occupation": {
+                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_occupation",
+                        "type": "string",
+                        "title": "The Att_occupation Schema",
+                        "default": "",
+                        "examples": [
+                          "판매/영업 종사자"
+                        ],
+                        "pattern": "^(.+)$"
+                      },
+                      "att_bplace": {
+                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_bplace",
+                        "type": "string",
+                        "title": "The Att_bplace Schema",
+                        "default": "",
+                        "examples": [
+                          "대전"
+                        ],
+                        "pattern": "^(.+)$"
+                      },
+                      "att_gplace": {
+                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_gplace",
+                        "type": "string",
+                        "title": "The Att_gplace Schema",
+                        "default": "",
+                        "examples": [
+                          "충남"
+                        ],
+                        "pattern": "^(.+)$"
+                      },
+                      "att_city": {
+                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_city",
+                        "type": "string",
+                        "title": "The Att_city Schema",
+                        "default": "",
+                        "examples": [
+                          "대전"
+                        ],
+                        "pattern": "^(.+)$"
+                      },
+                      "att_device": {
+                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_device",
+                        "type": "string",
+                        "title": "The Att_device Schema",
+                        "default": "",
+                        "examples": [
+                          "대졸"
+                        ],
+                        "pattern": "^(.+)$"
+                      },
+                      "att_key": {
+                        "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_key",
+                        "type": "string",
+                        "title": "The Att_key Schema",
+                        "default": "",
+                        "examples": [
+                          ""
+                        ],
+                        "pattern": "^(.+)$"
+                      }
+                    }
+                  }
+                },
+                "setting": {
+                  "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting",
+                  "type": "object",
+                  "title": "The Setting Schema",
+                  "required": [
+                    "relation",
+                    "level",
+                    "freq"
+                  ],
+                  "properties": {
+                    "relation": {
+                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/relation",
+                      "type": "string",
+                      "title": "The Relation Schema",
+                      "default": "",
+                      "examples": [
+                        "부부"
+                      ],
+                      "pattern": "^(.+)$"
+                    },
+                    "level": {
+                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/level",
+                      "type": "string",
+                      "title": "The Level Schema",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ],
+                      "pattern": "^([\\d\\.]+)$"
+                    },
+                    "freq": {
+                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/freq",
+                      "type": "string",
+                      "title": "The Freq Schema",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ],
+                      "pattern": "^(.+)$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "$id": "#/properties/SJML/properties/text",
+          "type": "object",
+          "title": "The Text Schema",
+          "required": [
+            "u"
+          ],
+          "properties": {
+            "u": {
+              "$id": "#/properties/SJML/properties/text/properties/u",
+              "type": "array",
+              "title": "The U Schema",
+              "items": {
+                "$id": "#/properties/SJML/properties/text/properties/u/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "tag",
+                  "att_who",
+                  "att_n",
+                  "att_date",
+                  "att_time",
+                  "cdata",
+                  "serialNum"
+                ],
+                "properties": {
+                  "tag": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/tag",
+                    "type": "string",
+                    "title": "The Tag Schema",
+                    "default": "",
+                    "examples": [
+                      "u"
+                    ],
+                    "pattern": "^(u)$"
+                  },
+                  "att_who": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/att_who",
+                    "type": "string",
+                    "title": "The Att_who Schema",
+                    "default": "",
+                    "examples": [
+                      "P1"
+                    ],
+                    "pattern": "^(.+)$"
+                  },
+                  "att_n": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/att_n",
+                    "type": "string",
+                    "title": "The Att_n Schema",
+                    "default": "",
+                    "examples": [
+                      "1"
+                    ],
+                    "pattern": "^(\\d+)$"
+                  },
+                  "att_date": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/att_date",
+                    "type": "string",
+                    "title": "The att_date Schema",
+                    "default": "",
+                    "examples": [
+                      "20191104"
+                    ],
+                    "pattern": "^(\\d{8})$"
+                  },
+                  "att_time": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/att_time",
+                    "type": "string",
+                    "title": "The Att_time Schema",
+                    "default": "",
+                    "examples": [
+                      "15:30"
+                    ],
+                    "pattern": "^(\\d{2}:\\d{2})$"
+                  },
+                  "cdata": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/cdata",
+                    "type": "string",
+                    "title": "The Cdata Schema",
+                    "default": "",
+                    "examples": [
+                      "나도 제주도는 몇 번 가 봤는데 국내 여행으로"
+                    ],
+                    "allOf":[
+                      { "pattern": "^(.+)$" },
+                      {
+                        "not": { "pattern": "^(\\s)" },
+                        "errorMessage": "should NOT match pattern \"^(\\s)\""
+                      },
+                      {
+                        "not": { "pattern": "(\\s)$" },
+                        "errorMessage": "should NOT match pattern \"(\\s)$\""
+                      },
+                      {
+                        "not": { "pattern": "(\\s\\s+)" },
+                        "errorMessage": "should NOT match pattern \"(\\s\\s+)\""
+                      },
+                      {
+                        "not": { "pattern": "(\t)" },
+                        "errorMessage": "should NOT match pattern \"(\t)\""
+                      }
+                    ]                    
+                  },
+                  "serialNum": {
+                    "$id": "#/properties/SJML/properties/text/properties/u/items/properties/serialNum",
+                    "type": "integer",
+                    "title": "The Serialnum Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
