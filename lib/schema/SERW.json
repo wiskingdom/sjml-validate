@@ -1,0 +1,290 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "SJML"
+  ],
+  "properties": {
+    "SJML": {
+      "$id": "#/properties/SJML",
+      "type": "object",
+      "title": "The Sjml Schema",
+      "required": [
+        "header",
+        "text"
+      ],
+      "properties": {
+        "header": {
+          "$id": "#/properties/SJML/properties/header",
+          "type": "object",
+          "title": "The Header Schema",
+          "required": [
+            "fileInfo",
+            "sourceInfo"
+          ],
+          "properties": {
+            "fileInfo": {
+              "$id": "#/properties/SJML/properties/header/properties/fileInfo",
+              "type": "object",
+              "title": "The Fileinfo Schema",
+              "required": [
+                "fileId",
+                "annoLevel",
+                "class",
+                "subclass"
+              ],
+              "properties": {
+                "fileId": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/fileId",
+                  "type": "string",
+                  "title": "The Fileid Schema",
+                  "default": "",
+                  "examples": [
+                    "SERW1900000005"
+                  ],
+                  "pattern": "^(SERW19\\d{8})$"
+                },
+                "annoLevel": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/annoLevel",
+                  "type": "string",
+                  "title": "The Annolevel Schema",
+                  "default": "",
+                  "examples": [
+                    "원시"
+                  ],
+                  "pattern": "^(원시)$"
+                },
+                "class": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/class",
+                  "type": "string",
+                  "title": "The Class Schema",
+                  "default": "",
+                  "examples": [
+                    "준구어-방송대본"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "subclass": {
+                  "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/subclass",
+                  "type": "string",
+                  "title": "The Subclass Schema",
+                  "default": "",
+                  "examples": [
+                    "드라마 대본"
+                  ],
+                  "pattern": "^(.+)$"
+                }
+              }
+            },
+            "sourceInfo": {
+              "$id": "#/properties/SJML/properties/header/properties/sourceInfo",
+              "type": "object",
+              "title": "The Sourceinfo Schema",
+              "required": [
+                "title",
+                "author",
+                "publisher",
+                "year"
+              ],
+              "properties": {
+                "title": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/title",
+                  "type": "string",
+                  "title": "The Title Schema",
+                  "default": "",
+                  "examples": [
+                    "구암 허준"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "author": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/author",
+                  "type": "string",
+                  "title": "The Author Schema",
+                  "default": "",
+                  "examples": [
+                    "최완규"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "publisher": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/publisher",
+                  "type": "string",
+                  "title": "The Publisher Schema",
+                  "default": "",
+                  "examples": [
+                    "MBC"
+                  ],
+                  "pattern": "^(.+)$"
+                },
+                "year": {
+                  "$id": "#/properties/SJML/properties/header/properties/sourceInfo/properties/year",
+                  "type": "string",
+                  "title": "The Year Schema",
+                  "default": "",
+                  "examples": [
+                    "2013"
+                  ],
+                  "pattern": "^(\\d{4})$"
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "$id": "#/properties/SJML/properties/text",
+          "type": "object",
+          "title": "The Text Schema",
+          "required": [
+            "episode"
+          ],
+          "properties": {
+            "episode": {
+              "$id": "#/properties/SJML/properties/text/properties/episode",
+              "type": "array",
+              "title": "The Episode Schema",
+              "items": {
+                "$id": "#/properties/SJML/properties/text/properties/episode/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "att_n",
+                  "scene"
+                ],
+                "properties": {
+                  "att_n": {
+                    "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/att_n",
+                    "type": "string",
+                    "title": "The Att_n Schema",
+                    "default": "",
+                    "examples": [
+                      "001"
+                    ],
+                    "pattern": "^(\\d{3})$"
+                  },
+                  "scene": {
+                    "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene",
+                    "type": "array",
+                    "title": "The Scene Schema",
+                    "items": {
+                      "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene/items",
+                      "type": "object",
+                      "title": "The Items Schema",
+                      "required": [
+                        "att_n"
+                      ],
+                      "properties": {
+                        "att_n": {
+                          "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene/items/properties/att_n",
+                          "type": "string",
+                          "title": "The Att_n Schema",
+                          "default": "",
+                          "examples": [
+                            "005"
+                          ],
+                          "pattern": "^(\\d{3})$"
+                        },
+                        "head": {
+                          "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene/items/properties/head",
+                          "type": "object",
+                          "title": "The Head Schema",
+                          "required": [
+                            "att_stage"
+                          ],
+                          "properties": {
+                            "att_stage": {
+                              "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene/items/properties/head/properties/att_stage",
+                              "type": "string",
+                              "title": "The Att_stage Schema",
+                              "default": "",
+                              "examples": [
+                                "동네 일각"
+                              ],
+                              "pattern": "^(.+)$"
+                            }
+                          }
+                        },
+                        "stage": {
+                          "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene/items/properties/stage",
+                          "type": "array",
+                          "title": "The Stage Schema",
+                          "items": {
+                            "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene/items/properties/stage/items",
+                            "type": "string",
+                            "title": "The Items Schema",
+                            "default": "",
+                            "examples": [
+                              "동네 일각에 허준 또래의 사내아이들 네댓 명이 놀고 있다."
+                            ],
+                            "pattern": "^(.+)$"
+                          }
+                        },
+                        "sp": {
+                          "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene/items/properties/sp",
+                          "type": "array",
+                          "title": "The Sp Schema",
+                          "items": {
+                            "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene/items/properties/sp/items",
+                            "type": "object",
+                            "title": "The Items Schema",
+                            "required": [
+                              "speaker",
+                              "p"
+                            ],
+                            "properties": {
+                              "speaker": {
+                                "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene/items/properties/sp/items/properties/speaker",
+                                "type": "string",
+                                "title": "The Speaker Schema",
+                                "default": "",
+                                "examples": [
+                                  "허준"
+                                ],
+                                "pattern": "^(.+)$"
+                              },
+                              "p": {
+                                "$id": "#/properties/SJML/properties/text/properties/episode/items/properties/scene/items/properties/sp/items/properties/p",
+                                "type": "string",
+                                "title": "The P Schema",
+                                "default": "",
+                                "examples": [
+                                  "양태야!!...길상아!!"
+                                ],
+                                "allOf":[
+                                  { "pattern": "^(.+)$" },
+                                  {
+                                    "not": { "pattern": "^(\\s)" },
+                                    "errorMessage": "should NOT match pattern \"^(\\s)\""
+                                  },
+                                  {
+                                    "not": { "pattern": "(\\s)$" },
+                                    "errorMessage": "should NOT match pattern \"(\\s)$\""
+                                  },
+                                  {
+                                    "not": { "pattern": "(\\s\\s+)" },
+                                    "errorMessage": "should NOT match pattern \"(\\s\\s+)\""
+                                  },
+                                  {
+                                    "not": { "pattern": "(\t)" },
+                                    "errorMessage": "should NOT match pattern \"(\t)\""
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

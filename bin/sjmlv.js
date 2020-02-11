@@ -77,17 +77,18 @@ const extFilter = ext;
 const outputFolder = path.normalize(output);
 
 //main
+xsMain({
+  runType,
+  schemaType,
+  inputFolder,
+  extFilter,
+  outputFolder
+});
 try {
-  xsMain({
-    runType,
-    schemaType,
-    inputFolder,
-    extFilter,
-    outputFolder
-  });
+
   
-} catch {
-  console.error(chalk.yellowBright('ERROR: Check options'));
+} catch (e) {
+  console.error(chalk.yellowBright(e.message));
   console.log(chalk.yellowBright('usage info can be viewed via: sjmlv --help'));
 }
 

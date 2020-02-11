@@ -73,7 +73,7 @@ try {
     outputFolder
   });
   
-} catch {
-  console.error(chalk.yellowBright('ERROR: Check options'));
+} catch (e) {
+  console.error(chalk.yellowBright(e.message));
   console.log(chalk.yellowBright('usage info can be viewed via: sjmlv --help'));
 }
