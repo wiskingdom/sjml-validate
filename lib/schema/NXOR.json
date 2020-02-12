@@ -45,7 +45,7 @@
                   "examples": [
                     "NIOR1900000013"
                   ],
-                  "pattern": "^(N[WLPIZ]RW19\\d{8})$"
+                  "pattern": "^(N[WLPIZ]OR19\\d{8})$"
                 },
                 "annoLevel": {
                   "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/annoLevel",

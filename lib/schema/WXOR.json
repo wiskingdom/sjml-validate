@@ -46,7 +46,7 @@
                   "examples": [
                     "WBOR1900000014"
                   ],
-                  "pattern": "^(W[ABZ]RW19\\d{8})$"
+                  "pattern": "^(W[ABZ]OR19\\d{8})$"
                 },
                 "annoLevel": {
                   "$id": "#/properties/SJML/properties/header/properties/fileInfo/properties/annoLevel",

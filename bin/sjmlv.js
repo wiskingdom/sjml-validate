@@ -18,10 +18,7 @@ program
     ${blf}SXRW: 구어(공적독백, 공적대화)
     ${blf}SDRW: 구어(일상대화)
     ${blf}SERW: 준구어(대본)
-    ${blf}MXRW: 메신저대화(2인대화, 다자대화)
-    ${blf}WXRW: 문어원문(상상, 정보, 기타)
-    ${blf}WCRW: 문어원문(잡지)
-    ${blf}NXRW: 신문원문`)
+    ${blf}MXRW: 메신저대화(2인대화, 다자대화)`)
   .option('-i, --input <dir_path>', 'set an input dir (required)')
   .option('-e, --ext [ext_name]', `set an extention name of target input files
     ${lf}  (default: sjml)`)
@@ -32,9 +29,6 @@ program
   .parse(process.argv);
 
 const types = [
-  'WXOR',
-  'WCOR',
-  'NXOR',
   'WXRW',
   'WCRW',
   'NXRW',
@@ -74,10 +68,6 @@ if (!program.ext) {
   program.ext = 'sjml';
 }
 if (!program.withEsc) {
-  program.withEsc = false;
-}
-
-if (['WXRW', 'WCRW'].includes(program.schema)) {
   program.withEsc = false;
 }
 
