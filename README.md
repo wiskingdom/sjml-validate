@@ -63,7 +63,7 @@ sjmlc [options]  // run converter
 | option  | description    |
 |-----------|-------------|
 | -s, --schema \<schema_type \>   | set a schema type (required) |
-| -i, --input \<dir_path \>      | set an input dir path (required)     |
+| -i, --input \<dir_path \>      | set an input dir path: read files recursively (required)     |
 | -e, --ext [schema_type ]     | set an extention name of target input files (default: sjml) |
 | -o, --output [dir_path ]    | set an output dir path (default: ./output/) |
 | -w, --withEsc        | run validator with escaping: available with SERW, EXRW schema (default: without escaping) |
@@ -90,7 +90,7 @@ sjmlc [options]  // run converter
 | option  | description    |
 |-----------|-------------|
 | -s, --schema \<schema_type \>   | set a schema type (required) |
-| -i, --input \<dir_path \>     | set an input dir path (required)     |
+| -i, --input \<dir_path \>     | set an input dir path: read files recursively (required)     |
 | -e, --ext [schema_type ]     | set an extention name of target input files (default: sjml) |
 | -o, --output [dir_path ]    | set an output dir path (default: ./output/) |
 | -h, --help                  | output usage information            |
