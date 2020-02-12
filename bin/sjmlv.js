@@ -43,6 +43,7 @@ const types = [
   'SERW',
   'SFRW',
   'EXRW',
+  'MXRW',
 ];
 
 if (!program.input) {

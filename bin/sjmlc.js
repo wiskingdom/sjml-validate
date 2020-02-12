@@ -65,15 +65,16 @@ const inputFolder = path.normalize(input);
 const extFilter = ext;
 const outputFolder = path.normalize(output);
 
+xsMain({
+  runType,
+  schemaType,
+  inputFolder,
+  extFilter,
+  outputFolder
+});
 //main
 try {
-  xsMain({
-    runType,
-    schemaType,
-    inputFolder,
-    extFilter,
-    outputFolder
-  });
+
   
 } catch (e) {
   console.error(chalk.yellowBright(e.message));
