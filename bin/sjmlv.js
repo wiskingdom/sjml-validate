@@ -11,15 +11,15 @@ const blf = lf + '  - '
 
 program
   .option('-s, --schema <Type>', `set a schema type (required)
-    ${blf}WXRW: 문어
+    ${blf}WXRW: 문어(상상, 정보, 기타)
     ${blf}WCRW: 문어(잡지)
     ${blf}NXRW: 신문
     ${blf}EXRW: 웹
     ${blf}SXRW: 구어(공적독백, 공적대화)
     ${blf}SDRW: 구어(일상대화)
     ${blf}SERW: 준구어(대본)
-    ${blf}MDRW: 메신저대화
-    ${blf}WXRW: 문어원문
+    ${blf}MXRW: 메신저대화(2인대화, 다자대화)
+    ${blf}WXRW: 문어원문(상상, 정보, 기타)
     ${blf}WCRW: 문어원문(잡지)
     ${blf}NXRW: 신문원문`)
   .option('-i, --input <dir_path>', 'set an input dir (required)')

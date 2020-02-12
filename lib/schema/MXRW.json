@@ -260,35 +260,46 @@
                   "type": "object",
                   "title": "The Setting Schema",
                   "required": [
-                    "relation",
-                    "level",
-                    "freq"
+                    "#text",
+                    "att_relation",
+                    "att_level",
+                    "att_freq"
                   ],
                   "properties": {
-                    "relation": {
-                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/relation",
+                    "#text": {
+                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/att_freq",
                       "type": "string",
-                      "title": "The Relation Schema",
+                      "title": "The Att_freq Schema",
+                      "default": "",
+                      "examples": [
+                        "P1-P2"
+                      ],
+                      "pattern": "^(.+)$"
+                    },
+                    "att_relation": {
+                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/att_relation",
+                      "type": "string",
+                      "title": "The Att_relation Schema",
                       "default": "",
                       "examples": [
                         "부부"
                       ],
                       "pattern": "^(.+)$"
                     },
-                    "level": {
-                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/level",
+                    "att_level": {
+                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/att_level",
                       "type": "string",
-                      "title": "The Level Schema",
+                      "title": "The Att_level Schema",
                       "default": "",
                       "examples": [
                         ""
                       ],
                       "pattern": "^([\\d\\.]+)$"
                     },
-                    "freq": {
-                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/freq",
+                    "att_freq": {
+                      "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/setting/properties/att_freq",
                       "type": "string",
-                      "title": "The Freq Schema",
+                      "title": "The Att_freq Schema",
                       "default": "",
                       "examples": [
                         ""
@@ -386,7 +397,7 @@
                       "나도 제주도는 몇 번 가 봤는데 국내 여행으로"
                     ],
                     "allOf":[
-                      { "pattern": "^(.+)$" },
+                      { "pattern": "^(.*)$" },
                       {
                         "not": { "pattern": "^(\\s)" },
                         "errorMessage": "should NOT match pattern \"^(\\s)\""
