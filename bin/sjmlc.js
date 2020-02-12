@@ -11,9 +11,9 @@ const blf = lf + '  - '
 
 program
   .option('-s, --schema <Type>', `set a schema type (required)
-    ${blf}WXRW: 문어
-    ${blf}WCRW: 문어(잡지)
-    ${blf}NXRW: 신문`)
+    ${blf}WXRW: 문어: 원문->원시
+    ${blf}WCRW: 문어(잡지): 원문->원시
+    ${blf}NXRW: 신문: 원문->원시`)
   .option('-i, --input <dir_path>', 'set an input dir path (required)')
   .option('-e, --ext [ext_name]', `set an extention name of target input files
     ${lf}  (default: sjml)`)
