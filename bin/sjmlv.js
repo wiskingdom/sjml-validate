@@ -10,21 +10,22 @@ const lf = ' '.repeat(20)
 const blf = lf + '  - '
 
 program
-  .option('-s, --schema <Type>', `set a schema type (required)
-    ${blf}WXRW: 문어(상상, 정보, 기타)
-    ${blf}WCRW: 문어(잡지)
-    ${blf}NXRW: 신문
-    ${blf}EXRW: 웹
-    ${blf}SXRW: 구어(공적독백, 공적대화)
-    ${blf}SDRW: 구어(일상대화)
-    ${blf}SERW: 준구어(대본)
-    ${blf}MXRW: 메신저대화(2인대화, 다자대화)`)
-  .option('-i, --input <dir_path>', 'set an input dir (required)')
-  .option('-e, --ext [ext_name]', `set an extention name of target input files
+  .option('-s, --schema <type>', `set a schema type (required)
+    ${blf}WXRW: 검증 - 문어(상상, 정보, 기타)
+    ${blf}WCRW: 검증 - 문어(잡지)
+    ${blf}NXRW: 검증 - 신문
+    ${blf}EXRW: 검증 - 웹
+    ${blf}SXRW: 검증 - 구어(공적독백, 공적대화)
+    ${blf}SDRW: 검증 - 구어(일상대화)
+    ${blf}SERW: 검증 - 준구어(대본)
+    ${blf}MXRW: 검증 - 메신저대화`)
+  .option('-i, --input <path>', 'an input dir path (required)')
+  .option('-e, --ext [ext_name]', `an extention name of target input files:
     ${lf}  (default: sjml)`)
-  .option('-o, --output [dir_path]', `set an output dir
+  .option('-o, --output [path]', `an output dir path
     ${lf}  (default: ./output/)`)
-  .option('-w, --withEsc', `run parser with escaping
+  .option('-w, --withEsc', `run with escaping
+    ${lf}  available with the schema types: EXRW, SERW
     ${lf}  (default: without escaping)`)
   .parse(process.argv);
 

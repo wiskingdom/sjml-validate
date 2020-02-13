@@ -10,14 +10,14 @@ const lf = ' '.repeat(20)
 const blf = lf + '  - '
 
 program
-  .option('-s, --schema <Type>', `set a schema type (required)
-    ${blf}WXRW: 문어: 원문->원시
-    ${blf}WCRW: 문어(잡지): 원문->원시
-    ${blf}NXRW: 신문: 원문->원시`)
-  .option('-i, --input <dir_path>', 'set an input dir path (required)')
-  .option('-e, --ext [ext_name]', `set an extention name of target input files
+  .option('-s, --schema <type>', `set a schema type (required)
+    ${blf}WXRW: 원문->원시 - 문어(상상, 정보, 기타)
+    ${blf}WCRW: 원문->원시 - 문어(잡지)
+    ${blf}NXRW: 원문->원시 - 신문`)
+  .option('-i, --input <path>', 'an input dir path (required)')
+  .option('-e, --ext [ext_name]', `an extention name of target input files
     ${lf}  (default: sjml)`)
-  .option('-o, --output [dir_path]', `set an output dir path
+  .option('-o, --output [path]', `an output dir path
     ${lf}  (default: ./output/)`)
   .parse(process.argv);
 
