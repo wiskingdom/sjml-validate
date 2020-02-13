@@ -1,13 +1,31 @@
-# etri-cli usage guide
+# sjml-validate usage guide
+
+--------------------------
 
 ## 1. Install node.js (prerequisite)
 
-### 1-1 On linux
+### 1-1 On windows
+
+#### 1) Download LTS version installer
+
+* Download Link: https://nodejs.org
+
+#### 2) Install via the installer
+
+#### 3) Verify installation
+
+```cmd
+node -v
+npm -v
+```
+--------------------------
+
+### 1-2 On linux
 
 #### 1) Install nvm
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 ```
 
 #### 2) Restart terminal
@@ -27,23 +45,8 @@ npm -v
 
 --------------------------
 
-### 1-2 On windows
 
-#### 1) Download LTS version installer
-
-* Download Link: https://nodejs.org
-
-#### 2) Install via the installer
-
-#### 3) Verify installation
-
-```cmd
-node -v
-npm -v
-```
---------------------------
-
-## 2. Install sjml-validate package
+## 2. Install sjml-validate
 
 ```bash
 npm install sjml-validate -g
@@ -53,8 +56,8 @@ npm install sjml-validate -g
 ## 3. Usage
 
 ```bash
-sjmlv [options]  // run validator
-sjmlc [options]  // run converter
+sjmlv <options>  // run validator
+sjmlc <options>  // run converter
 ```
 
 ### 3.1 Validator 
@@ -64,9 +67,9 @@ sjmlc [options]  // run converter
 |-----------|-------------|
 | -s, --schema \<schema_type \>   | set a schema type (required) |
 | -i, --input \<dir_path \>      | set an input dir path: read files recursively (required)     |
-| -e, --ext [extention_name ]     | set an extention name of target input files (default: sjml) |
-| -o, --output [dir_path ]    | set an output dir path (default: ./output/) |
-| -w, --withEsc        | run with escaping: available with SERW, EXRW (default: without escaping) |
+| -e, --ext [extention_name ]     | set an extention name of target input files (optional) <br/> (default: sjml) |
+| -o, --output [dir_path ]    | set an output dir path (optional)<br/> (default: ./output/) |
+| -w, --withEsc        | run with escaping: available with SERW, EXRW  (optional)<br/>(default: without escaping) |
 | -h, --help                  | output usage information            |
 
 #### Validator Schema Type
@@ -91,8 +94,8 @@ sjmlc [options]  // run converter
 |-----------|-------------|
 | -s, --schema \<schema_type \>   | set a schema type (required) |
 | -i, --input \<dir_path \>     | set an input dir path: read files recursively (required)     |
-| -e, --ext [extention_name ]     | set an extention name of target input files (default: sjml) |
-| -o, --output [dir_path ]    | set an output dir path (default: ./output/) |
+| -e, --ext [extention_name ]     | set an extention name of target input files (optional) <br/>(default: sjml) |
+| -o, --output [dir_path ]    | set an output dir path (optional) <br/>(default: ./output/) |
 | -h, --help                  | output usage information            |
 
 #### Converter Schema Type
@@ -100,7 +103,7 @@ sjmlc [options]  // run converter
 | type | description |
 |-------|---------|
 |WXRW   | 원문->원시: 문어(상상, 정보, 기타)|
-|WCRW | 원문->원시: 문어(잡지): |
+|WCRW | 원문->원시: 문어(잡지) |
 |NXRW | 원문->원시: 신문|
 
 --------------------------
@@ -109,10 +112,12 @@ sjmlc [options]  // run converter
 
 
 ```bash
-sjmlv -s SDRW -i "..\데이터\일상대화" -e SJML 
-sjmlv -s EXRW -i "..\데이터\웹" -o ..\output -w
+sjmlv -s SDRW -i "..\데이터\일상 대화" -e SJML
+sjmlv --schema=SDRW --input="..\데이터\일상 대화" --ext=SJML
+sjmlv -s EXRW -i ..\데이터\웹 -o ..\output -w
 ```
 
 ```bash
-sjmlc -s NXRW -i "..\데이터\신문" -e xml -o ..\output
+sjmlc -s NXRW -i ..\데이터\신문 -e xml -o ..\output
+sjmlc --input=..\데이터\신문 --output=../output --schema=WXRW 
 ```

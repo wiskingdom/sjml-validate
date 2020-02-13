@@ -11,14 +11,14 @@ const blf = lf + '  - '
 
 program
   .option('-s, --schema <type>', `set a schema type (required)
-    ${blf}WXRW: 검증 - 문어(상상, 정보, 기타)
-    ${blf}WCRW: 검증 - 문어(잡지)
-    ${blf}NXRW: 검증 - 신문
-    ${blf}EXRW: 검증 - 웹
-    ${blf}SXRW: 검증 - 구어(공적독백, 공적대화)
-    ${blf}SDRW: 검증 - 구어(일상대화)
-    ${blf}SERW: 검증 - 준구어(대본)
-    ${blf}MXRW: 검증 - 메신저대화`)
+    ${blf}WXRW: 원시검증 - 문어(상상, 정보, 기타)
+    ${blf}WCRW: 원시검증 - 문어(잡지)
+    ${blf}NXRW: 원시검증 - 신문
+    ${blf}EXRW: 원시검증 - 웹
+    ${blf}SXRW: 원시검증 - 구어(공적독백, 공적대화)
+    ${blf}SDRW: 원시검증 - 구어(일상대화)
+    ${blf}SERW: 원시검증 - 준구어(대본)
+    ${blf}MXRW: 원시검증 - 메신저대화`)
   .option('-i, --input <path>', 'an input dir path (required)')
   .option('-e, --ext [ext_name]', `an extention name of target input files:
     ${lf}  (default: sjml)`)
