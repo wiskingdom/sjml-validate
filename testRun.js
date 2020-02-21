@@ -8,7 +8,7 @@ const runType = 'validate';
 // C:\\Users\\korean\\Desktop\\EXRW
 //C:\\Users\\korean\\Desktop\\데이터\\웹
 const inputFolder = path
-  .normalize('C:\\Users\\korean\\Desktop\\EXRW');
+  .normalize('C:\\Users\\korean\\Desktop\\데이터\\웹');
 const outputFolder = path
   .normalize('C:\\Users\\korean\\Desktop\\output');
 
