@@ -5,6 +5,8 @@ const { xsMain } = require('./lib/xsMain.js');
 const schemaType = 'EXRW';
 const extFilter = 'sjml';
 const runType = 'validate';
+// C:\\Users\\korean\\Desktop\\EXRW
+//C:\\Users\\korean\\Desktop\\데이터\\웹
 const inputFolder = path
   .normalize('C:\\Users\\korean\\Desktop\\EXRW');
 const outputFolder = path
