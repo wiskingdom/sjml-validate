@@ -237,7 +237,25 @@
                 "examples": [
                   ""
                 ],
-                "pattern": "^(.*)$"
+                "allOf":[
+                  { "pattern": "^(.*)$" },
+                  {
+                    "not": { "pattern": "^(\\s)" },
+                    "errorMessage": "should NOT match pattern \"^(\\s)\""
+                  },
+                  {
+                    "not": { "pattern": "(\\s)$" },
+                    "errorMessage": "should NOT match pattern \"(\\s)$\""
+                  },
+                  {
+                    "not": { "pattern": "(\\s\\s+)" },
+                    "errorMessage": "should NOT match pattern \"(\\s\\s+)\""
+                  },
+                  {
+                    "not": { "pattern": "(\t)" },
+                    "errorMessage": "should NOT match pattern \"(\t)\""
+                  }
+                ]
               },
               "keyword": {
                 "$id": "#/properties/SJML/properties/text/items/properties/keyword",

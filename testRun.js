@@ -2,14 +2,14 @@ const path = require('path');
 const { xsMain } = require('./lib/xsMain.js');
 
 // options
-const schemaType = 'EXRW';
-const extFilter = 'sjml';
-const runType = 'validate';
+const schemaType = 'NXRW';
+const extFilter = 'xml';
+const runType = 'convert';
 
 const inputFolder = path
-  .normalize('sample/EXRW');
+  .normalize('sample/NXOR');
 const outputFolder = path
-  .normalize('output/EXRW');
+  .normalize('output/NXRW');
 
 // main
 xsMain({ runType, schemaType, inputFolder, extFilter, outputFolder });
