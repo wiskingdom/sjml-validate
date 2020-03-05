@@ -46,7 +46,7 @@
                   "title": "The Fileid Schema",
                   "default": "",
                   "examples": [
-                    "SDRW1900001863"
+                    "SBRW1900012170"
                   ],
                   "pattern": "^(S[AB]RW19\\d{8})$"
                 },
@@ -76,7 +76,7 @@
                   "title": "The Class Schema",
                   "default": "",
                   "examples": [
-                    "사적대화"
+                    "공적대화"
                   ],
                   "pattern": "^(.+)$"
                 },
@@ -86,7 +86,7 @@
                   "title": "The Subclass Schema",
                   "default": "",
                   "examples": [
-                    "일상대화"
+                    "방송대화"
                   ],
                   "pattern": "^(.+)$"
                 },
@@ -96,7 +96,7 @@
                   "title": "The Tokensize Schema",
                   "default": "",
                   "examples": [
-                    "5382"
+                    "12623"
                   ],
                   "pattern": "^(\\d+)$"
                 }
@@ -119,7 +119,7 @@
                   "title": "The Title Schema",
                   "default": "",
                   "examples": [
-                    "2인 일상대화 00001863"
+                    "20130205_100분 토론, 582회"
                   ],
                   "pattern": "^(.+)$"
                 },
@@ -129,7 +129,7 @@
                   "title": "The Author Schema",
                   "default": "",
                   "examples": [
-                    "개인발화자"
+                    "신동호, 유기준, 문병호, 목진휴, 이철희"
                   ],
                   "pattern": "^(.+)$"
                 },
@@ -139,7 +139,7 @@
                   "title": "The Publisher Schema",
                   "default": "",
                   "examples": [
-                    "개인대화녹음"
+                    "MBC"
                   ],
                   "pattern": "^(.+)$"
                 },
@@ -149,7 +149,7 @@
                   "title": "The Year Schema",
                   "default": "",
                   "examples": [
-                    "2014"
+                    "2013"
                   ],
                   "pattern": "^(\\d{4})$"
                 }
@@ -197,9 +197,9 @@
                         "title": "The Att_sex Schema",
                         "default": "",
                         "examples": [
-                          "남"
+                          "M"
                         ],
-                        "pattern": "^([MF\\?])$"
+                        "pattern": "^([MF])$"
                       },
                       "att_age": {
                         "$id": "#/properties/SJML/properties/header/properties/profileInfo/properties/personId/items/properties/att_age",
@@ -207,7 +207,7 @@
                         "title": "The Att_age Schema",
                         "default": "",
                         "examples": [
-                          "30~39세"
+                          "50s"
                         ],
                         "pattern": "^(.+)$"
                       },
@@ -217,7 +217,7 @@
                         "title": "The Att_occupation Schema",
                         "default": "",
                         "examples": [
-                          "판매/영업 종사자"
+                          "아나운서"
                         ],
                         "pattern": "^(.+)$"
                       },
@@ -227,7 +227,7 @@
                         "title": "The Att_bplace Schema",
                         "default": "",
                         "examples": [
-                          "대전"
+                          "대구"
                         ],
                         "pattern": "^(.+)$"
                       },
@@ -237,7 +237,7 @@
                         "title": "The Att_city Schema",
                         "default": "",
                         "examples": [
-                          "대전"
+                          "서울"
                         ],
                         "pattern": "^(.+)$"
                       }
@@ -250,7 +250,7 @@
                   "title": "The Setting Schema",
                   "default": "",
                   "examples": [
-                    "세팅"
+                    "박근혜 정부 및 정부조직법 개정 등 임시국회 쟁점에 대한 논의"
                   ],
                   "pattern": "^(.+)$"
                 }
@@ -318,7 +318,7 @@
                     "title": "The Cdata Schema",
                     "default": "",
                     "examples": [
-                      "나도 제주도는 몇 번 가 봤는데 국내 여행으로"
+                      "시청자 여러분 안녕하십니까?"
                     ],
                     "allOf":[
                       { "pattern": "^(.+)$" },
