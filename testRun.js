@@ -7,9 +7,9 @@ const extFilter = 'sjml';
 const runType = 'validate';
 
 const inputFolder = path
-  .normalize('sample/serw_e');
+  .normalize('sample/SERW');
 const outputFolder = path
-  .normalize('output/serw_e');
+  .normalize('output/SERW');
 
 // main
 xsMain({ runType, schemaType, inputFolder, extFilter, outputFolder });
